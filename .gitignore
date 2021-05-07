@@ -3,5 +3,5 @@ log.txt
 bin/
 lib/
 obj/
-Makefile
-*.make
+#Makefile
+#*.make

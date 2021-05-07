@@ -5,7 +5,8 @@ project "sysme"
 	kind "ConsoleApp"
 	language "C++"
 	targetdir "bin/%{cfg.buildcfg}"
-	files {"main.cpp"}
+	includedirs {"include/", "src/"}
+	files {"src/main.cpp", "src/**.cpp", "src/**.c", "include/**.h", "include/**.hpp", "src/**.h", "src/**.hpp"}
 
 	filter "configurations:Debug"
 		defines {"DEBUG"}
@@ -13,4 +14,4 @@ project "sysme"
 
 	filter "configurations:Release"
 		defines {"NDEBUG"}
-		optimize "On"
+		optimize "Size"
