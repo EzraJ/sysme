@@ -26,6 +26,7 @@ int main(){
 	std::string tmp;
 	if(!conf.good()){
 		std::cout << "\nsysme could not read config file, exiting sysme\n";
+		conf.close();
 		std::exit(1);
 	}
 	while(std::getline(conf, tmp)){
@@ -47,6 +48,8 @@ int main(){
 		currentFile.close();
 		std::cout << std::endl;
 	}
+
+	conf.close();
 	
 	return 0;
 }
